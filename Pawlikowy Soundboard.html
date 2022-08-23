@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pawlikowy Soundboard</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+		
+		body{
+			background-color: rgb(0,0,0);
+		}
+		
+		div{
+			background-color: rgb(50,50,50);
+			text-align:center;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 1080px;
+			height: 2400px;
+		}
+		
+		input{
+			background-color: rgb(200,200,200);
+			color: rgb(0,0,0);
+			font-family: Arial;
+			font-size: 40px;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			white-space: normal;
+		}
+		
+		input:hover{
+			background-color: rgb(200,255,200);
+			color: rgb(0,0,0);
+		}
+		
+		input:active{
+			background-color: rgb(150,200,150);
+			color: rgb(0,0,0);
+		}
+		
+		tr{
+			width: 100%;
+			height: 300px;
+		}
+		
+		th{
+			width: 33%;
+			height: 300px;
+		}
+		
+		</style>
+	</head>
+	
+	<body>
+			<table>
+				<tr>
+					<th><input type="button" value="Ale lipa, nie da się tego robić w nieskończoność." onclick="odtwarzanie('Ale_lipa_nie_da_się_tego_robić_w_nieskonczoność.wav')"></input></th>
+					<th><input type="button" value="Co? To jakiś guzik?" onclick="odtwarzanie('Co_to_jakiś_guzik.wav')"></input></th>
+					<th><input type="button" value="Khhh, nie, nie, nie!" onclick="odtwarzanie('Khhh_nie_nie_nie.wav')"></input></th>
+				</tr>
+
+				<tr>
+					<th><input type="button" value="Ło ruszył się!" onclick="odtwarzanie('Ło_ruszył_się.wav')"></input></th>
+					<th><input type="button" value="Mogę wyjść?" onclick="odtwarzanie('Mogę_wyjść.wav')"></input></th>
+					<th><input type="button" value="Nie czuję tego, sorki." onclick="odtwarzanie('Nie_czuję_tego_sorki.wav')"></input></th>
+				</tr>
+				
+				<tr>				
+					<th><input type="button" value="Mie mam na to czasu, kij z tym!" onclick="odtwarzanie('Nie_mam_na_to_czasu_kij_z_tym.wav')"></input></th>
+					<th><input type="button" value="Nikogo nie ma!" onclick="odtwarzanie('Nikogo_nie_ma.wav')"></input></th>
+					<th><input type="button" value="No bez jaj!" onclick="odtwarzanie('No_bez_jaj.wav')"></input></th>
+				</tr>
+				
+				<tr>				
+					<th><input type="button" value="No, teraz ja przechodzę przez wentylację!" onclick="odtwarzanie('No_teraz_ja_przechodzę_przez_wentylację.wav')"></input></th>
+					<th><input type="button" value="O, gówno widać kapitanie!" onclick="odtwarzanie('O_gówno_widać_kapitanie.wav')"></input></th>
+					<th><input type="button" value="O nie!" onclick="odtwarzanie('O_nie.wav')"></input></th>
+				</tr>
+					
+				<tr>
+					<th><input type="button" value="Pewnie się zaraz pojawi, nie chcę, żeby się pojawił." onclick="odtwarzanie('Pewnie_się_zaraz_pojawi_nie_chce_żeby_się_pojawił.wav')"></input></th>
+					<th><input type="button" value="Słyszę coś!" onclick="odtwarzanie('Słyszę_coś.wav')"></input></th>
+					<th><input type="button" value="Spokój, wszyscy spokój, zachować spokój." onclick="odtwarzanie('Spokój_wszyscy_spokój_zachować_spokój.wav')"></input></th>
+				</tr>
+				
+				<tr>
+					<th><input type="button" value="Super, zróbmy to!" onclick="odtwarzanie('Super_zróbmy_to.wav')"></input></th>
+					<th><input type="button" value="To niedobrze. To żle." onclick="odtwarzanie('To_niedobrze_to_źle.wav')"></input></th>
+					<th><input type="button" value="Że co niby!? Co to za gówno!?" onclick="odtwarzanie('Że_co_niby_co_to_za_gówno.wav')"></input></th>
+				</tr>
+					
+			</table>
+		
+	
+	</body>
+	
+	<script>
+		var prevAudio = null;
+		
+		function odtwarzanie( src )
+		{
+			var audio = document.createElement("AUDIO");
+			audio.src =  "https://github.com/MaciejPaszek/PawlikowySoundBoard/raw/main/" + src;
+			
+			alert(audio.src);
+			alert(audio)
+			
+			if(!( prevAudio == null ))
+			{
+				prevAudio.pause();
+			}
+			
+			audio.load();
+			audio.play();
+			
+			prevAudio = audio;
+		}
+		
+		function zatrzymanie()
+		{
+			prevAudio.pause();
+		}
+		
+	</script>
+	
+</html>
